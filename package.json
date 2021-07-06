@@ -22,6 +22,7 @@
     "@schematics/angular": "^9.1.0",
     "@syncfusion/ej2-angular-schedule": "^19.1.69",
     "@syncfusion/ej2-material-theme": "~19.1.67",
+    "angular2-chartjs": "^0.5.1",
     "auth0-js": "^9.16.2",
     "bootstrap": "^5.0.2",
     "rxjs": "~6.6.0",

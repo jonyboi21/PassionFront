@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'app-root',
-  template: `
-    <app-nav-bar></app-nav-bar>
-
-    <!-- routes will be rendered here -->
-    <router-outlet></router-outlet>
-
-    <!-- footer -->
-    <app-footer></app-footer>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private authService: AuthService) {
+    authService.handleAuthentication();
+  }
 }

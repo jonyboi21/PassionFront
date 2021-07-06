@@ -18,6 +18,7 @@ import { AuthService} from "./auth.service";
 import {DataService} from "./data.service";
 import {AuthGuard} from "./auth.guard";
 import { CallbackComponent } from './callback/callback.component';
+import {ChartModule} from "angular2-chartjs";
 
 
 
@@ -41,16 +42,9 @@ import { CallbackComponent } from './callback/callback.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {path: 'app-contact-us', component: ContactUsComponent},
-      {path: 'app-home', component: HomeComponent},
-      {path: 'app-alumni', component: AlumniComponent},
-      {path: 'app-sign-in', component: SignInComponent},
-      {path: 'app-admin', component: AdminComponent, canActivate: [AuthGuard]},
-      {path: 'app-about-us', component: AboutUsComponent},
-    ]),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule
   ],
   providers: [
     AuthService, AuthGuard, DataService

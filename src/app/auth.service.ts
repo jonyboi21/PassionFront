@@ -11,8 +11,8 @@ export class AuthService {
     domain: 'dev-frfs0vx8.us.auth0.com',
     responseType: 'token id_token',
     audience: 'http://localhost:8080',
-    redirectUri: 'http://localhost:4200/app-admin',
-    scope: 'openid app-admin app-admin'
+    redirectUri: 'http://localhost:4200/app-callback',
+    scope: 'openid view::admin'
   });
 
   constructor(public router: Router) {}

@@ -14,7 +14,6 @@ export class SignInComponent implements OnInit {
   password: string
 
   constructor(private data: DataService, private router: Router, private authService: AuthService) {
-    authService.handleAuthentication();
   }
 
 
@@ -22,10 +21,8 @@ export class SignInComponent implements OnInit {
   }
 
   LogInUser() {
-    if (this.username.toUpperCase() === 'ADMIN' && this.password === 'admin123') {
-      this.authService.login()
-      // this.router.navigate(['app-admin'])
-      // this.authService.isAuthenticated()
-    }else alert("Wrong username or password")
+    if(this.username.toUpperCase() === "ADMIN" && this.password === "admin123") {
+      this.authService.login();
+    }else alert("Wrong Username Or Password Entered Please Try Again")
   }
 }

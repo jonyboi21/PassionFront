@@ -21,9 +21,14 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th scope="col">Client Name</th>
-    <th scope="col">Client Email</th>
-    <th scope="col">Client Message</th>
+    <th scope="col">Player Name</th>
+    <th scope="col">Player Email</th>
+    <th scope="col">Player Age</th>
+    <th scope="col">Player Height(Feet)</th>
+    <th scope="col">Player Height(Inches)</th>
+    <th scope="col">Player Weight</th>
+    <th scope="col">Player ID</th>
+    <th scope="col">Delete Player</th>
   </tr>
   </thead>
 
@@ -35,9 +40,43 @@
     <td>{{player.heightFeet}}</td>
     <td>{{player.heightInches}}</td>
     <td>{{player.weight}}</td>
+    <td>{{player.id}}</td>
+    <td><button class="btn btn-danger" (click)="deletePlayer(player.id)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<br>
+<br>
+<h4>Parent Information</h4>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Player Name</th>
+    <th scope="col">Parent Name</th>
+    <th scope="col">Parent Email</th>
+    <th scope="col">Parent Phone Number</th>
+    <th scope="col">Parent Address</th>
+    <th scope="col">Parent City</th>
+    <th scope="col">Parent State</th>
+    <th scope="col">Parent Zip</th>
+    <th scope="col">Delete Player</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let player of players">
+    <td>{{player.name}}</td>
+    <td>{{player.parent.parentName}}</td>
+    <td>{{player.parent.parentEmail}}</td>
+    <td>{{player.parent.phoneNumber}}</td>
+    <td>{{player.parent.streetName}}</td>
+    <td>{{player.parent.city}}</td>
+    <td>{{player.parent.state}}</td>
+    <td>{{player.parent.zip}}</td>
     <td><button class="btn btn-danger" (click)="deletePlayer(player.id)">Delete</button></td>
   </tr>
   </tbody>
 </table>
 <button class="btn btn-success" (click)="logOut()">LogOut</button>
-<button class="btn-success" (click)="getAllPlayers()">Fetch Info</button>
+

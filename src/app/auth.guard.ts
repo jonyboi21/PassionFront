@@ -9,14 +9,16 @@ export class AuthGuard {
   constructor(private authService: AuthService) {
   }
 
-  canActivate(): boolean {
+  canActivate() {
     if (this.authService.isAuthenticated()) {
       return true;
     } else {
       this.authService.login()
       return true;
     }
+  }
 
-
+  logOut(){
+    this.authService.logout();
   }
 }

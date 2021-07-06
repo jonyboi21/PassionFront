@@ -5,7 +5,6 @@ import {Router} from "@angular/router";
 import {Players} from "../players";
 import {DOCUMENT} from "@angular/common";
 import {FormGroup, FormControl,Validator} from "@angular/forms";
-import {Parents} from "../parent";
 
 @Component({
   selector: 'app-contact-us',
@@ -15,20 +14,18 @@ import {Parents} from "../parent";
 export class ContactUsComponent implements OnInit {
   client = new Clients();
   // player = new Players();
-  // parent = new Parents();
-
   playerForm: FormGroup
 
 
 
-  // @Inject(DOCUMENT) private _document: Document
-
-  constructor(private data: DataService, private router: Router,
+  constructor(private data: DataService, private router: Router,@Inject(DOCUMENT) private _document: Document
   ) { }
 
   ngOnInit(): void {
+
     this.initForm()
   }
+
   private initForm(){
     this.playerForm = new FormGroup({
       'id': new FormControl(),
@@ -54,26 +51,21 @@ export class ContactUsComponent implements OnInit {
 
 
 
-
-
   submitContactButton() {
-    this.data.addClient(this.client)
-      .subscribe(response =>{
-          // this._document.defaultView.location.reload();
-        }
-      )
+this.data.addClient(this.client)
+  .subscribe(response =>{
+    this._document.defaultView.location.reload(); })
   }
 
 
 
   submitPlayerButton() {
-    this.data.addPlayer(this.playerForm.getRawValue())
-      .subscribe( response =>{
-          // this._document.defaultView.location.reload();
-          // this.router.navigate(['app-parent-info'])
-        }
-      );
+this.data.addPlayer(this.playerForm.getRawValue())
+  .subscribe( response =>{
+    this._document.defaultView.location.reload(); }
+  );
   }
 
 
 }
+

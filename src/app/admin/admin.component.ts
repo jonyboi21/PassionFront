@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {Parents} from "../parent";
 import {Players} from "../players";
 import {AuthService} from "../auth.service";
+import {AuthGuard} from "../auth.guard";
 
 @Component({
   selector: 'app-admin',
@@ -15,15 +16,16 @@ export class AdminComponent implements OnInit {
   clients: Clients[];
   players: Players[];
 
-  constructor(private data: DataService, private router: Router, private authservice: AuthService) { }
+  constructor(private data: DataService, private router: Router, private authguard: AuthGuard) { }
 
   ngOnInit(): void {
-
+  this.getAllPlayers()
+  this.getAllClients()
   }
 
 
   logOut(){
-    this.authservice.logout();
+    this.authguard.logOut();
   }
   deleteClient(id: number) {
     this.data.deleteClient(id).subscribe(
@@ -54,7 +56,7 @@ export class AdminComponent implements OnInit {
   deletePlayer(id: number) {
     this.data.deletePlayer(id).subscribe(
       response =>{
-        // this.getAllPlayers();
+        this.getAllPlayers();
       }
     )
 
