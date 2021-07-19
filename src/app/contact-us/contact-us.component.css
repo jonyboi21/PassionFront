@@ -46,6 +46,10 @@ idance .timetable {
     display: flex;
   }
 }
+
+#rounded{
+  border-radius: 20%;
+}
 .idance .timetable-item-img {
   overflow: hidden;
   height: 100px;

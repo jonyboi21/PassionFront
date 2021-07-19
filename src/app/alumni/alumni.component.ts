@@ -66,7 +66,6 @@ export class AlumniComponent implements OnInit {
   constructor(private dataservice: DataService) { }
 
   ngOnInit(): void {
-    // this.getNatesData();
 
   }
 

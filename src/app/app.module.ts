@@ -19,6 +19,8 @@ import {DataService} from "./data.service";
 import {AuthGuard} from "./auth.guard";
 import { CallbackComponent } from './callback/callback.component';
 import {ChartModule} from "angular2-chartjs";
+import { WenyenStatsComponent } from './wenyen-stats/wenyen-stats.component';
+import { NateStatsComponent } from './nate-stats/nate-stats.component';
 
 
 
@@ -35,6 +37,8 @@ import {ChartModule} from "angular2-chartjs";
     LandingPageComponent,
     AboutUsComponent,
     CallbackComponent,
+    WenyenStatsComponent,
+    NateStatsComponent,
 
 
   ],

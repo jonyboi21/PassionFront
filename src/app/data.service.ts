@@ -5,6 +5,7 @@ import {Clients} from "./client";
 import {Players} from "./players";
 import {Parents} from "./parent";
 import {Data} from "./data";
+import {Stats} from "./stats";
 
 
 
@@ -16,7 +17,7 @@ export class DataService {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private httpClient: HttpClient) { }
 
 
   addPlayer(player:Players){
@@ -72,6 +73,34 @@ export class DataService {
     let token = localStorage.getItem('access_token')
     return this.http.get<Data>(`http://localhost:8080/api/v1/data/${id}`)
     {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)}
+  }
+
+
+
+  getChartData(): Stats{
+     var stats = new Stats()
+    fetch("https://nba-stats4.p.rapidapi.com/per_game_regular_season/1629117", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "b1f5a5e06dmshc0511f3321317c0p132906jsn7fb69e629522",
+        "x-rapidapi-host": "nba-stats4.p.rapidapi.com"
+      }
+    })
+      .then(response => response.json())
+      .then(data =>
+      stats = data)
+
+    return stats
+  }
+
+
+  getWenyenChartData(): Observable<Stats> {
+    return this.httpClient.get<Stats>(`https://nba-player-individual-stats.p.rapidapi.com/players/299?rapidapi-key=b1f5a5e06dmshc0511f3321317c0p132906jsn7fb69e629522`)
+  }
+
+
+  getNateChartData(): Observable<Stats>{
+    return this.httpClient.get<Stats>(`https://nba-player-individual-stats.p.rapidapi.com/players/11?rapidapi-key=b1f5a5e06dmshc0511f3321317c0p132906jsn7fb69e629522`)
   }
 
 }

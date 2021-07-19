@@ -8,6 +8,8 @@ import {AdminComponent} from "./admin/admin.component";
 import {AuthGuard} from "./auth.guard";
 import {AboutUsComponent} from "./about-us/about-us.component";
 import {CallbackComponent} from "./callback/callback.component";
+import {WenyenStatsComponent} from "./wenyen-stats/wenyen-stats.component";
+import {NateStatsComponent} from "./nate-stats/nate-stats.component";
 
 const routes: Routes = [
   {path: 'app-home', component: HomeComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path: 'app-sign-in', component: SignInComponent},
   {path: 'app-admin', component: AdminComponent, canActivate: [AuthGuard]},
   {path: 'app-about-us', component: AboutUsComponent},
+  {path: 'app-wenyen-stats', component: WenyenStatsComponent},
+  {path: 'app-nate-stats', component: NateStatsComponent},
   {path: 'app-callback', component: CallbackComponent},
   {path: '', redirectTo: '/app-home', pathMatch: 'full'}
 ]

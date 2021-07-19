@@ -1,125 +1,142 @@
+
 <!-- Section: Contact v.1 -->
 
 <br>
 <br>
-<section class="my-5">
+<br>
 
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold text-center my-5">Sign Up</h2>
-  <!-- Section description -->
-  <p class="text-center w-responsive mx-auto pb-5">We'll write rarely, but only the best content..</p>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-  <!-- Grid row -->
-  <div class="container">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-    <!-- Grid column -->
-    <div class="col-12">
+                <form [formGroup]="playerForm" (ngSubmit)="submitPlayerButton()" class="mx-1 mx-md-4">
 
-      <!--       Form with header-->
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" placeholder="Your Name" class="form-control" formControlName="name" />
+                      <label class="form-label" for="form3Example1c"></label>
+                    </div>
 
-      <div class="container" id="PlayerForm">
-        <form [formGroup]="playerForm" (ngSubmit)="submitPlayerButton()">
-          <h4>Sign Up For Spring Tryouts</h4>
-          <div class="form-group">
-            <label for="Name">Name</label>
-            <input type="text" class="form-control" required="required" formControlName="name" name="name" >
-          </div>
+                    <div class="form-outline flex-fill mb-0" formGroupName="parent" >
+                      <input type="text" id="form3Example1c" placeholder="Your Name" class="form-control" formControlName="parentName" />
+                      <label class="form-label" for="form3Example1c"></label>
+                    </div>
+                  </div>
 
-          <div class="form-group">
-            <label for="Email">Email</label>
-            <input type="email" class="form-control" required="required" formControlName="email" name="email">
-          </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" placeholder="Your Email" class="form-control" formControlName="email" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
 
-          <div class="form-group">
-            <label for="Age">Age</label>
-            <input type="number" class="form-control" required="required" formControlName="age" name="age">
-          </div>
+                    <div class="form-outline flex-fill mb-0" formGroupName="parent">
+                      <input type="email" id="form3Example3c" placeholder="Your Parents Email" class="form-control" formControlName="parentEmail" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
 
-          <div class="form-group">
-            <label for="HeightFeet">Height(Feet)</label>
-            <input type="number" min="4" max="7" style="width: 60px" class="form-control" required="required" formControlName="heightFeet" name="heightFeet">
-            <label id="heightInch" for="HeightInches">Height(Inches)</label>
-            <input type="number" min="0" max="11" style="padding-top: 100px" style="width: 60px" class="form-control" required="required" formControlName="heightInches" name="heightInches">
-          </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
 
-          <div class="form-group">
-            <label for="Weight">Weight</label>
-            <input type="number"  style="width: 60px" class="form-control" required="required" formControlName="weight">
-          </div>
+                    <div class="form-outline flex-fill mb-0" >
+                      <input type="email" id="form3Example3c" placeholder="Height (Feet)" class="form-control" formGroupName="heightFeet" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" placeholder="Height (Inches)" class="form-control" formGroupName="heightInches" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" placeholder="Your Age" class="form-control" formGroupName="age" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" placeholder="Your Weight" class="form-control" formGroupName="weight" />
+                      <label class="form-label" for="form3Example3c"></label>
+                    </div>
+
+
+                  </div>
 
 
 
-          <div formGroupName="parent" class="form-group">
-            <label for="Parent">Parent Information</label>
-            <br>
-            <br>
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <label for="Parent.name">Name</label>
-                  <input type="text" class="form-control" style="width: 200px" required="required"  name="name" formControlName="parentName" >
-                </div>
-                <div class="col">
-                  <label for="Parent.email">Email</label>
-                  <input type="Email" class="form-control" style="width: 300px" required="required"  name="email" formControlName="parentEmail" >
-                </div>
+                  <div class="d-flex flex-row align-items-center mb-4" formGroupName="parent">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="number" id="form3Example4c" placeholder="Parent Phone Number" class="form-control" formControlName="phoneNumber" />
+                      <label class="form-label" for="form3Example4c"></label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4" formGroupName="parent">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example4cd" placeholder="Address" class="form-control" formControlName="streetName" />
+                      <label class="form-label" for="form3Example4cd"></label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4" formGroupName="parent">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example4cd" placeholder="City" class="form-control" formControlName="city"/>
+                      <label class="form-label" for="form3Example4cd"></label>
+                    </div>
+                    <div class="form-outline flex-fill mb-0" class="row-cols-md-4">
+                      <input type="text" id="form3Example4cd" placeholder="State" class="form-control" formControlName="state" />
+                      <label class="form-label" for="form3Example4cd"></label>
+                    </div>
+
+                    <div class="form-outline flex-fill mb-0" class="row-cols-md-4" >
+                      <input type="number" id="form3Example4cd" placeholder="Zip" class="form-control" formControlName="zip"/>
+                      <label class="form-label" for="form3Example4cd"></label>
+                    </div>
+
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input
+                      class="form-check-input me-2"
+                      type="checkbox"
+                      value=""
+                      id="form2Example3c"
+                    />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button class="d-flex justify-content-center mx-4 mb-3 mb-lg-4" type="submit" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+
+                </form>
+
               </div>
-              <br>
-              <div class="form-group">
-                <label for="phoneNumber">Phone Number*</label>
-                <input type="tel" class="form-control" required="required" name="age" formControlName="phoneNumber">
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="assets/TryOuts.jpg" class="img-fluid" id="rounded" alt="Sample image">
+
               </div>
             </div>
-            <br>
-            <br>
-            <div class="container">
-                <div class="col">
-                  <label for="Address.streetNumber">Street Name</label>
-                  <input type="text" class="form-control" style="width: 200px" required="required"  name="streetNumber" formControlName="streetName">
-                </div>
-
-              </div>
-            <br>
-            <br>
-
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <label for="Address.city">City</label>
-                  <input type="text" class="form-control" style="width: 200px" required="required"  name="streetNumber" formControlName="city" >
-                </div>
-                <div class="col">
-                  <label for="Address.state">State</label>
-                  <input type="text" class="form-control" style="width: 100px" required="required"  name="name" formControlName="state" >
-                </div>
-
-                <div class="col">
-                  <label for="Address.zip">Zip</label>
-                  <input type="text" class="form-control" style="width: 100px" required="required" name="name" formControlName="zip" >
-                </div>
-
-              </div>
-            </div>
-
-
           </div>
-          <button class="btn btn-success" type="submit">Submit</button>
-        </form>
+        </div>
       </div>
-
+      <br>
+      <br>
     </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-
   </div>
-  <!-- Grid row -->
-
 </section>
-<!-- Section: Contact v.1 -->
-
 
 <br>
 <br>
@@ -193,6 +210,5 @@
 <!--    </form>-->
 <!--  </div>-->
 <!--</div> -->
-
 
 

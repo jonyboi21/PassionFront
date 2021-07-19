@@ -38,9 +38,9 @@ a:hover, a:active {
   outline: 0;
 }
 .aboutus-more {
-  border: 1px solid #fdb801;
+  border: 1px solid lightblue;
   border-radius: 25px;
-  color: #fdb801;
+  color: blue;
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
